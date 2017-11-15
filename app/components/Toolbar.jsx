@@ -68,7 +68,7 @@ class ToolbarComponent extends Component {
       return (
         <Toolbar style={this.state.style}>
           <ToolbarGroup>
-            <ToolbarTitle text={`Admin Console`} />
+            <ToolbarTitle text={`Solsensus Admin Console`} />
           </ToolbarGroup>
         </Toolbar>
       )

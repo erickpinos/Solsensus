@@ -4,6 +4,9 @@ module.exports = {
     app: path.resolve(__dirname, 'app/main.js')
   },
   output: { path: path.resolve(__dirname), filename: 'dist.js' },
+  devServer: {
+    historyApiFallback: true
+  },
   module: {
     loaders: [
       {
