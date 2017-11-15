@@ -11,6 +11,7 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
+import FlatButton from 'material-ui/FlatButton';
 import axios from 'axios';
 
 class DashboardComponent extends Component {
@@ -107,12 +108,17 @@ class DashboardComponent extends Component {
       window.removeEventListener("resizeDB", this.updateDimensions.bind(this));
   }
 
-  handleChange = (event) => {
-    console.log(this.state.city)
-    this.setState({
-      city: event.target.value,
+  sendTrigger() {
+    var self = this
+    let status = "on"
+    axios.get('http://localhost:3000/miner?status=on')
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
     });
-  };
+  }
 
   render() {
     let tableList
@@ -156,8 +162,12 @@ class DashboardComponent extends Component {
             />
             <CardTitle title="Status" subtitle={this.state.subtitle2} expandable={true} />
             <CardText>
+              <FlatButton label="Start Miner" onClick={this.sendTrigger.bind(this)} style={{backgroundColor:"#d8d5d5"}}/>
+              <br />
               <Table>
                 <TableBody displayRowCheckbox={false}>
+                  <TableRow key={"asdfsf"} style={{marginTop:"20px"}}>
+                  </TableRow>
                     {tableList}
                 </TableBody>
               </Table>

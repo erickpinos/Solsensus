@@ -16,4 +16,3 @@ const CoinHive = require('coin-hive');
     Accepted hashes: ${data.acceptedHashes}
   `));
 })();
-
